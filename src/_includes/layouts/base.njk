@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>{{ renderData.title or title or metadata.title }}</title>
+    <meta name="description" content="{{ renderData.description or description or metadata.description }}"/>
+    <meta name="author" content="Pierre-Luc Babin"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon"/>
+    <link href="http://fonts.googleapis.com/css?family=Cabin:600" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="/styles/index.css">
+  </head>
+
+  <body>
+    <div class="container">
+      <nav class="clearfix">
+        <h2>
+          <a class="brand" href="/">plbabin<em>.com</em>
+          </a>
+        </h2>
+      </nav>
+
+      <div class="content">
+        {{ content | safe }}
+      </div>
+
+      <footer>
+        <p>&copy; plbabin.com 2019</p>
+      </footer>
+    </div>
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(["_setAccount", "UA-1870948-1"]);
+      _gaq.push(["_trackPageview"]);
+
+      (function () {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = true;
+        ga.src = (
+          "https:" == document.location.protocol
+          ? "https://ssl"
+          : "http://www") + ".google-analytics.com/ga.js";
+        var s = document.getElementsByTagName("script")[0];
+        s
+          .parentNode
+          .insertBefore(ga, s);
+      })();
+    </script>
+  </body>
+</html>
